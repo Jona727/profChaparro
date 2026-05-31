@@ -1,0 +1,11 @@
+# Configuración local de entorno
+.env
+
+# Archivos de subidas locales (evitar subir PDFs de prueba al hosting/repo)
+uploads/*
+!uploads/.gitkeep
+
+# Archivos temporales o del sistema operativo
+.DS_Store
+Thumbs.db
+*.log

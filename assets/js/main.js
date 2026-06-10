@@ -33,8 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     trigger: ".scroll-container",
                     pin: true,
                     scrub: 1,
-                    snap: 1 / (panels.length - 1),
-                    end: () => "+=" + wrapper.offsetWidth
+                    snap: {
+                        snapTo: 1 / (panels.length - 1),
+                        duration: { min: 0.2, max: 0.6 },
+                        delay: 0.4,
+                        ease: "power1.inOut"
+                    },
+                    end: () => "+=" + (wrapper.offsetWidth * 1.4)
                 }
             });
 

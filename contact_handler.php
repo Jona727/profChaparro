@@ -14,14 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? 'No provisto';
     $message = $_POST['message'] ?? '';
 
-    // Aquí iría la lógica de mail() si el servidor está configurado.
-    // Ejemplo simple:
-    /*
-    $to = "tu-correo@ejemplo.com";
+    $to = "brunolomejor2016@gmail.com";
     $subject = "Nuevo mensaje de contacto de: $name";
-    $headers = "From: $email";
-    mail($to, $subject, $message, $headers);
-    */
+    $body = "Nombre: $name\nCorreo: $email\n\nMensaje:\n$message";
+    $headers = "From: no-reply@profchaparro.com\r\nReply-To: $email\r\n";
+    @mail($to, $subject, $body, $headers);
 
     // Redirigir de vuelta con mensaje de éxito
     header('Location: index.php?contact=success#contact');

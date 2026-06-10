@@ -78,7 +78,7 @@ require_once 'includes/db.php';
                         <select id="subject-select" class="custom-select"><option value="">Materia</option></select>
                         <select id="topic-select" class="custom-select"><option value="">Tema</option></select>
                         
-                        <div class="hero-img-wrap" style="width: 100%; height: 30vh; margin-top: 5rem; opacity: 0.8;">
+                        <div class="hero-img-wrap" style="width: 100%; height: 25vh; margin-top: 2.5rem; opacity: 0.8;">
                              <img class="parallax-img" src="assets/img/machiavelli.png" alt="Niccolò Machiavelli - Pensamiento Político" loading="lazy">
                         </div>
                     </div>
@@ -89,7 +89,7 @@ require_once 'includes/db.php';
 
                     <div class="pagination" id="pagination" style="display:none;"></div>
 
-                    <div class="hero-img-wrap" style="width: 30vw; height: 80vh; margin-left: 5vw; opacity: 0.9;">
+                    <div class="hero-img-wrap" style="width: 30vw; height: 65vh; margin-top: 2vh; margin-left: 5vw; opacity: 0.9;">
                          <img class="parallax-img" src="assets/img/florence.png" alt="Florence Renaissance - Florencia Insurgente" loading="lazy">
                     </div>
                 </div>
@@ -183,7 +183,7 @@ require_once 'includes/db.php';
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="hero-img-wrap" style="width: 22vw; height: 50vh; opacity: 0.85; align-self: flex-end;">
+                    <div class="hero-img-wrap" style="width: 22vw; height: 50vh; opacity: 0.85; align-self: flex-end; margin-bottom: 4.5rem;">
                          <img class="parallax-img" src="assets/img/debates.png" alt="Debates Académicos - Filosofía y Pensamiento" loading="lazy">
                     </div>
                 </div>
@@ -194,7 +194,13 @@ require_once 'includes/db.php';
             <section class="panel contact-panel">
                 <div class="contact-container" style="display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 4vw;">
                     <div class="contact-left" style="width: 60vw; display: flex; align-items: center; gap: 4vw;">
-                        <h2 class="text-huge" style="font-size: 6rem; white-space: nowrap; line-height: 0.9;">Let's<br>Talk</h2>
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+                            <h2 class="text-huge" style="font-size: 6rem; white-space: nowrap; line-height: 0.9;">Let's<br>Talk</h2>
+                            <p class="contact-direct-email" style="font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); margin: 0; text-align: left;">
+                                Cátedra Online:<br>
+                                <a href="mailto:brunolomejor2016@gmail.com" style="color: var(--text-primary); text-decoration: none; font-weight: 700; font-family: var(--font-body); font-size: 1.1rem; border-bottom: 2px solid var(--text-primary); padding-bottom: 2px; display: inline-block; margin-top: 0.4rem; text-transform: none; letter-spacing: normal;">brunolomejor2016@gmail.com</a>
+                            </p>
+                        </div>
                         <form class="contact-form" action="contact_handler.php" method="POST" style="width: 100%; max-width: 500px; margin: 0;">
                             <input type="text" name="name" class="form-input" placeholder="Tu Nombre *" required>
                             <input type="email" name="email" class="form-input" placeholder="Tu Email *" required>
@@ -202,7 +208,7 @@ require_once 'includes/db.php';
                             <button type="submit" class="btn-submit">Enviar Request</button>
                         </form>
                     </div>
-                    <div class="hero-img-wrap" style="width: 22vw; height: 50vh; opacity: 0.85; align-self: flex-end;">
+                    <div class="hero-img-wrap" style="width: 22vw; height: 50vh; opacity: 0.85; align-self: flex-end; margin-bottom: 4.5rem;">
                          <img class="parallax-img" src="assets/img/contact.png" alt="Escríbenos - Pluma y Tinta Clásica" loading="lazy">
                     </div>
                 </div>

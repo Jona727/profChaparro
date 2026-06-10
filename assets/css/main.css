@@ -47,7 +47,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0 5vw;
+    padding: 0 5vw 4.5rem 5vw;
     flex-shrink: 0;
 }
 
@@ -212,6 +212,10 @@ body {
     gap: 2rem;
     width: 65vw;
     align-content: start;
+    height: 55vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    padding-right: 1.5rem;
 }
 
 /* Pagination */
@@ -346,6 +350,22 @@ body {
     transform: scale(0.95);
 }
 
+.contact-direct-email a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--text-primary);
+    padding-bottom: 2px;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+.contact-direct-email a:hover {
+    opacity: 0.7;
+}
+
 /* Utility for GSAP */
 .parallax-img { transform-origin: center; }
 
@@ -369,6 +389,7 @@ body {
     width: 65vw;
     height: 60vh;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
     padding-right: 2rem;
 }
 
@@ -855,8 +876,11 @@ body {
 
     .files-area {
         width: 100% !important;
-        grid-template-columns: 1fr !important; /* Stack files on small mobiles */
+        grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
+        height: auto !important;
+        overflow-y: visible !important;
+        padding-right: 0 !important;
     }
 
     /* Debates Panel (*04) */

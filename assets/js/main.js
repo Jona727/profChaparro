@@ -16,6 +16,7 @@ function escapeHTML(str) {
 
 // Variables globales para que scrollToPanel pueda acceder desde los links del nav
 let scrollTween, panels;
+let isNavigating = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -34,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     pin: true,
                     scrub: 1,
                     snap: {
-                        snapTo: 1 / (panels.length - 1),
+                        snapTo: (value) => {
+                            if (isNavigating) return value; // No auto-snap during programmatic navigation
+                            return Math.round(value * (panels.length - 1)) / (panels.length - 1);
+                        },
                         duration: { min: 0.2, max: 0.6 },
                         delay: 0.4,
                         ease: "power1.inOut"
@@ -465,6 +469,8 @@ function scrollToPanel(index) {
 
     if (window.innerWidth >= 1024) {
         if (!scrollTween) return;
+        isNavigating = true;
+        ScrollTrigger.refresh();
         const st = scrollTween.scrollTrigger;
         const totalScrollLength = st.end - st.start;
         const targetScroll = st.start + (totalScrollLength / (panels.length - 1)) * index;
@@ -472,7 +478,13 @@ function scrollToPanel(index) {
         gsap.to(window, {
             scrollTo: targetScroll,
             duration: 1.2,
-            ease: "power2.inOut"
+            ease: "power2.inOut",
+            onComplete: () => {
+                // Wait for any remaining scroll events to settle before allowing manual snapping again
+                setTimeout(() => {
+                    isNavigating = false;
+                }, 100);
+            }
         });
     } else {
         // En móviles, hacer scroll vertical al panel correspondiente
@@ -483,4 +495,8 @@ function scrollToPanel(index) {
         });
     }
 }
+
+window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+});
 

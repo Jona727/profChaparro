@@ -194,13 +194,7 @@ require_once 'includes/db.php';
             <section class="panel contact-panel">
                 <div class="contact-container" style="display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 4vw;">
                     <div class="contact-left" style="width: 60vw; display: flex; align-items: center; gap: 4vw;">
-                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem;">
-                            <h2 class="text-huge" style="font-size: 6rem; white-space: nowrap; line-height: 0.9;">Let's<br>Talk</h2>
-                            <p class="contact-direct-email" style="font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); margin: 0; text-align: left;">
-                                Cátedra Online:<br>
-                                <a href="mailto:brunolomejor2016@gmail.com" style="color: var(--text-primary); text-decoration: none; font-weight: 700; font-family: var(--font-body); font-size: 1.1rem; border-bottom: 2px solid var(--text-primary); padding-bottom: 2px; display: inline-block; margin-top: 0.4rem; text-transform: none; letter-spacing: normal;">brunolomejor2016@gmail.com</a>
-                            </p>
-                        </div>
+                        <h2 class="text-huge" style="font-size: 6rem; white-space: nowrap; line-height: 0.9;">Let's<br>Talk</h2>
                         <form class="contact-form" action="contact_handler.php" method="POST" style="width: 100%; max-width: 500px; margin: 0;">
                             <input type="text" name="name" class="form-input" placeholder="Tu Nombre *" required>
                             <input type="email" name="email" class="form-input" placeholder="Tu Email *" required>
